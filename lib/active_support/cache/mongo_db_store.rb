@@ -20,7 +20,7 @@ module ActiveSupport
         collection.find.delete_many
       end
 
-      def cleanup
+      def cleanup(_)
         collection.find(expires_at: {'$lt' => Time.now.utc.to_i}).delete_many
       end
 
@@ -31,7 +31,7 @@ module ActiveSupport
         collection.find(_id: key_matcher(matcher, options)).delete_many
       end
 
-      def delete_entry(key)
+      def delete_entry(key, _)
         collection.find(_id: key).delete_one
       end
 

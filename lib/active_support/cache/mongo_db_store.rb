@@ -42,16 +42,18 @@ module ActiveSupport
         created_at = Time.now.utc.to_i
         value = options[:raw] ? entry.value.to_s : entry
         rescue_error_with false do
-          collection.find(_id: key).update_one({'$set' => {data: Base64.encode64(Marshal.dump(value)),
-                                                           expires_at: expires_at,
-                                                           created_at: created_at}},
+          set = {data: Base64.encode64(Marshal.dump(value)),
+                 expires_at: expires_at,
+                 created_at: created_at}
+          collection.find(_id: key).update_one({'$set' => set},
                                                upsert: true)
         end
         entry
       end
 
       def read_entry(key, _)
-        doc = collection.find(_id: key, expires_at: {'$gt' => Time.now.utc.to_i}).first
+        expiration_criteria = {'$gt' => Time.now.utc.to_i}
+        doc = collection.find(_id: key, expires_at: expiration_criteria).first
         rescue_error_with(nil) { deserialize_entry(doc['data']) } if doc
       end
 

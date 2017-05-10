@@ -7,7 +7,7 @@ AllCops:
     - "vendor/**/*"
     - "db/schema.rb"
     - "bin/**/*"
-    - "finapps.gemspec"
+    - "mongo_db_store.gemspec"
   UseCache: false
 
 # No space makes the method definition shorter and differentiates

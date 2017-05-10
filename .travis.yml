@@ -2,4 +2,16 @@ sudo: false
 language: ruby
 rvm:
   - 2.4.1
-before_install: gem install bundler -v 1.14.6
+before_install:
+  - "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
+  - gem update --system
+  - gem install bundler -v 1.14.6
+script:
+  - bundle exec rspec
+notifications:
+  email: false
+addons:
+  code_climate:
+    repo_token: 2f734d5c1a287119c53e838b48209990edb58544a3854874be0032f0465397e6
+after_success:
+  - bundle exec codeclimate-test-reporter

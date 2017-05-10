@@ -20,9 +20,11 @@ module ActiveSupport
         end
 
         context 'when NOT using defaults' do
-          let(:store) { ActiveSupport::Cache.lookup_store(:mongo_db_store,
-                                                          collection: 'foo',
-                                                          expires_in: 1.minute) }
+          let(:store) do
+            ActiveSupport::Cache.lookup_store(:mongo_db_store,
+                                              collection: 'foo',
+                                              expires_in: 1.minute)
+          end
           it 'can override the default expiration' do
             expect(store.options[:expires_in]).to eq(1.minute)
           end

@@ -2,6 +2,9 @@
 ---------------
 
 [![Gem Version](https://badge.fury.io/rb/mongo_db_store.svg)](https://badge.fury.io/rb/mongo_db_store)
+[![Build Status](https://travis-ci.org/qbantek/mongo_db_store.svg?branch=master)](https://travis-ci.org/qbantek/mongo_db_store)
+[![Code Climate](https://codeclimate.com/github/qbantek/mongo_db_store/badges/gpa.svg)](https://codeclimate.com/github/qbantek/mongo_db_store)
+[![Test Coverage](https://codeclimate.com/github/qbantek/mongo_db_store/badges/coverage.svg)](https://codeclimate.com/github/qbantek/mongo_db_store/coverage)
 [![Dependency Status](https://gemnasium.com/badges/github.com/qbantek/mongo_db_store.svg)](https://gemnasium.com/github.com/qbantek/mongo_db_store)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://mongo_db_store.mit-license.org)
 

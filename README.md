@@ -1,5 +1,4 @@
 # MongoDbStore
----------------
 
 [![Gem Version](https://badge.fury.io/rb/mongo_db_store.svg)](https://badge.fury.io/rb/mongo_db_store)
 [![Build Status](https://travis-ci.org/qbantek/mongo_db_store.svg?branch=master)](https://travis-ci.org/qbantek/mongo_db_store)
